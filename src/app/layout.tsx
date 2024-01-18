@@ -4,6 +4,8 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/shared/Navbar";
+import AuthContextWrapper from "@/components/contexts/AuthContextWrapper";
+import AuthLayout from "@/components/shared/AuthLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,14 +20,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className={cn("min-h-screen", inter.className)}>
-        <main className="container mx-auto">
-          <Navbar />
-          {children}
-        </main>
-        <Toaster duration={3000} />
-      </body>
-    </html>
+    <AuthContextWrapper>
+      <html lang="en" className="dark">
+        <body className={cn("min-h-screen", inter.className)}>
+          <AuthLayout>
+            <main className="container mx-auto">
+              <Navbar />
+              {children}
+            </main>
+          </AuthLayout>
+          <Toaster duration={3000} />
+        </body>
+      </html>
+    </AuthContextWrapper>
   );
 }

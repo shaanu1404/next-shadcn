@@ -11,7 +11,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import DrawerAvatarButton from "./DrawerAvatarButton";
+import UserProfileDropdown from "@/components/shared/UserProfileDropdown";
 
 export default function AppDrawerButton() {
   return (
@@ -21,7 +21,7 @@ export default function AppDrawerButton() {
           <Menu size={20} strokeWidth={1.5} />
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-full sm:w-[240px] flex flex-col">
+      <SheetContent side="left" className="w-full sm:w-[280px] flex flex-col">
         <div className="flex-1">
           <SheetHeader>
             <SheetTitle>Are you absolutely sure?</SheetTitle>
@@ -29,7 +29,7 @@ export default function AppDrawerButton() {
         </div>
         <Separator />
         <SheetFooter>
-          <DrawerAvatarButton />
+          <UserProfileDropdown />
         </SheetFooter>
       </SheetContent>
     </Sheet>
