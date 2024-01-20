@@ -23,12 +23,10 @@ export default function RootLayout({
     <AuthContextWrapper>
       <html lang="en" className="dark">
         <body className={cn("min-h-screen", inter.className)}>
-          <AuthLayout>
-            <main className="container mx-auto">
-              <Navbar />
-              {children}
-            </main>
-          </AuthLayout>
+          <main className="container mx-auto">
+            <Navbar />
+            {children}
+          </main>
           <Toaster duration={3000} />
         </body>
       </html>
